@@ -1,0 +1,24 @@
+module.exports = {
+  apps: [
+    {
+      name: 'shootwala-backend',
+      script: 'npm',
+      cwd: '/home/shootwala/backend',
+      args: 'run dev',
+
+    },
+    {
+      name: 'shootwala-admin',
+      script: 'npm',
+      cwd: '/home/shootwala/shootwala-dashbord',
+      args: 'run preview',
+
+    },
+    {
+      name: 'shootwala-frontend',
+      script: 'npm',
+      cwd: '/home/shootwala/shotwala-frontend',
+      args: 'run start',
+
+    }]
+}

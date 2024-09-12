@@ -28,7 +28,7 @@ export const placeOrder = async (req, res, next) => {
 
     await OrderModel.create(orderOptions)
 
-    res.status(201).json({
+    return res.status(201).json({
         success: true,
         messege: "Order Placed Seccessfuly Via Cash On Delivery"
     })
@@ -64,7 +64,7 @@ export const placeOrderOnline = async (req, res, next) => {
 
     await OrderModel.create(orderOptions)
 
-    res.status(201).json({
+    return res.status(201).json({
         success: true,
         messege: "Order Placed Seccessfuly Via Cash On Delivery"
     })
@@ -76,7 +76,7 @@ export const getMyOrders = async (req, res, next) => {
         user: "657835047d029ded524db99a"
     }).populate("user", "name")
 
-    res.status(200).json({
+    return res.status(200).json({
         success: true,
         orders,
     })
@@ -90,7 +90,7 @@ export const getOrderDetails = async (req, res, next) => {
         return res.status(400).json({ massege: "Invalid OrderId" })
     }
 
-    res.status(200).json({
+    return res.status(200).json({
         success: true,
         order,
     })
@@ -103,7 +103,7 @@ export const getAdminOrders = async (req, res, next) => {
         return res.status(400).json({ massege: "Invalid OrderId" })
     }
 
-    res.status(200).json({
+    return res.status(200).json({
         success: true,
         order,
     })
@@ -129,7 +129,7 @@ export const proccessOrder = async (req, res, next) => {
 
     await order.save();
 
-    res.status(200).json({
+    return res.status(200).json({
         success: true,
         messege: "Status Updated Successfully",
         order,
